@@ -1,33 +1,51 @@
 //DECLARE VARIABLES
 var isCorrect = false;
-var questions = new Array(12);
+var questions = [
+    "Test 0",
+    "Test 1",
+    "Test 2",
+    "Test 3",
+    "Test 4",
+    "Test 5",
+    "Test 6",
+    "Test 7",
+    "Test 8",
+    "Test 9",
+    "Test 10",
+    "Test 11",
+    "Test 12"
+];
+var rand = questions[Math.floor(Math.random() * questions.length)];
+var drops = [
+  "yes-drop-1",
+  "yes-drop-2",
+  "yes-drop-3",
+  "yes-drop-4",
+  "yes-drop-5",
+  "yes-drop-6",
+  "yes-drop-7",
+  "yes-drop-8",
+  "yes-drop-9",
+  "yes-drop-10",
+  "yes-drop-11",
+  "yes-drop-12"
+];
 
-//Cell membrane
-questions[0] = "";
-//Centrosome
-questions[1] = "";
-//Cytoplasm
-questions[2] = "";
-//Golgi body
-questions[3] = "";
-//Lysosome
-questions[4] = "";
-//Mitochondrion
-questions[5] = "";
-//Nuclear membrane
-questions[6] = "";
-//Nucleolus
-questions[7] = "";
-//Nucleus
-questions[8] = "";
-//Ribosome
-questions[9] = "";
-//Rough endoplasmic reticulum
-questions[10] = "";
-//Smooth endoplasmic reticulum
-questions[11] = "";
-//Vacuole
-questions[12] = "";
+//Cell membrane 0
+//Centrosome 1
+//Cytoplasm 2
+//Golgi body 3
+//Lysosome 4
+//Mitochondrion 5
+//Nuclear membrane 6
+//Nucleolus 7
+//Nucleus 8
+//Ribosome 9
+//Rough endoplasmic reticulum 10
+//Smooth endoplasmic reticulum 11
+//Vacuole 12
+
+$(document).ready(function() { document.getElementById('dropzone-one').innerHTML += rand;});
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -106,11 +124,7 @@ interact('.dropzone').dropzone({
     //event.relatedTarget.textContent = 'Dragged out';
   },
   ondrop: function (event) {
-      if (isCorrect === true) {
-        event.relatedTarget.textContent = 'Correct';
-      }// else {
-       // event.relatedTarget.textContent = 'False';
-      //}
+    
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
