@@ -1,19 +1,19 @@
 //DECLARE VARIABLES
 var isCorrect = false;
 var questions = [
-    "Test 0",
-    "Test 1",
-    "Test 2",
-    "Test 3",
-    "Test 4",
-    "Test 5",
-    "Test 6",
-    "Test 7",
-    "Test 8",
-    "Test 9",
-    "Test 10",
-    "Test 11",
-    "Test 12"
+    "The thin layer of protein and fat that surrounds the cell. The cell membrane is semipermeable, allowing some substances to pass into the cell and blocking others.",
+    "A small body located near the nucleus - it has a dense center and radiating tubules. The centrosomes is where microtubules are made. During cell division (mitosis), the centrosome divides and the two parts move to opposite sides of the dividing cell. The centriole is the dense center of the centrosome.",
+    "The jellylike material outside the cell nucleus in which the organelles are located.",
+    "A flattened, layered, sac-like organelle that looks like a stack of pancakes and is located near the nucleus. It produces the membranes that surround the lysosomes. The Golgi body packages proteins and carbohydrates into membrane-bound vesicles for 'export' from the cell.",
+    "Round organelles surrounded by a membrane and containing digestive enzymes. This is where the digestion of cell nutrients takes place.",
+    "Spherical to rod-shaped organelles with a double membrane. The inner membrane is infolded many times, forming a series of projections (called cristae). The mitochondrion converts the energy stored in glucose into ATP (adenosine triphosphate) for the cell.",
+    "The membrane that surrounds the nucleus.",
+    "An organelle within the nucleus - it is where ribosomal RNA is produced. Some cells have more than one nucleolus.",
+    "Spherical body containing many organelles, including the nucleolus. The nucleus controls many of the functions of the cell (by controlling protein synthesis) and contains DNA (in chromosomes). The nucleus is surrounded by the nuclear membrane.",
+    "Small organelles composed of RNA-rich cytoplasmic granules that are sites of protein synthesis.",
+    "A vast system of interconnected, membranous, infolded and convoluted sacks that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). Rough ER is covered with ribosomes that give it a rough appearance. Rough ER transports materials through the cell and produces proteins in sacks called cisternae (which are sent to the Golgi body, or inserted into the cell membrane).",
+    "A vast system of interconnected, membranous, infolded and convoluted tubes that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). The space within the ER is called the ER lumen. Smooth ER transports materials through the cell. It contains enzymes and produces and digests lipids (fats) and membrane proteins; smooth ER buds off from rough ER, moving the newly-made proteins and lipids to the Golgi body, lysosomes, and membranes.",
+    "Fluid-filled, membrane-surrounded cavities inside a cell. The vacuole fills with food being digested and waste material that is on its way out of the cell."
 ];
 var rand = questions[Math.floor(Math.random() * questions.length)];
 var drops = [
@@ -124,7 +124,28 @@ interact('.dropzone').dropzone({
     //event.relatedTarget.textContent = 'Dragged out';
   },
   ondrop: function (event) {
-    
+    //switch() {
+    //  default:
+    //    document.getElementById('dropzone-one').innerHTML += " Incorrect!";
+    //}
+
+    if (document.getElementById('dropzone-one').innerHTML === questions[0]) {
+      console.log("drop question 0");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[1]) {
+      console.log("drop question 1");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[2]) {
+      console.log("drop question 2");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[3]) {
+      console.log("drop question 3");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[4]) {
+      console.log("drop question 4");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[5]) {
+      console.log("drop question 5");
+    } else if (document.getElementById('dropzone-one').innerHTML === questions[6]) {
+      console.log("drop question 6");
+    } else {
+      console.log("else on drop!");
+    }
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
