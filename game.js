@@ -2,31 +2,31 @@
 var isCorrect = false;
 var questions = new Array(12);
 
-//
+//Cell membrane
 questions[0] = "";
-//
+//Centrosome
 questions[1] = "";
-//
+//Cytoplasm
 questions[2] = "";
-//
+//Golgi body
 questions[3] = "";
-//
+//Lysosome
 questions[4] = "";
-//
+//Mitochondrion
 questions[5] = "";
-//
+//Nuclear membrane
 questions[6] = "";
-//
+//Nucleolus
 questions[7] = "";
-//
+//Nucleus
 questions[8] = "";
-//
+//Ribosome
 questions[9] = "";
-//
+//Rough endoplasmic reticulum
 questions[10] = "";
-//
+//Smooth endoplasmic reticulum
 questions[11] = "";
-//
+//Vacuole
 questions[12] = "";
 
 // target elements with the "draggable" class
