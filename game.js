@@ -3,6 +3,7 @@ var ans = new Array;
 var done = new Array;
 var score = 0;
 var currentQuestion;
+var currentHeldWord;
 var isDropCorrect = false;
 var questions = [
     "The thin layer of protein and fat that surrounds the cell. The cell membrane is semipermeable, allowing some substances to pass into the cell and blocking others.",
@@ -18,6 +19,21 @@ var questions = [
     "A vast system of interconnected, membranous, infolded and convoluted sacks that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). Rough ER is covered with ribosomes that give it a rough appearance. Rough ER transports materials through the cell and produces proteins in sacks called cisternae (which are sent to the Golgi body, or inserted into the cell membrane).",
     "A vast system of interconnected, membranous, infolded and convoluted tubes that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). The space within the ER is called the ER lumen. Smooth ER transports materials through the cell. It contains enzymes and produces and digests lipids (fats) and membrane proteins; smooth ER buds off from rough ER, moving the newly-made proteins and lipids to the Golgi body, lysosomes, and membranes.",
     "Fluid-filled, membrane-surrounded cavities inside a cell. The vacuole fills with food being digested and waste material that is on its way out of the cell."
+];
+var words = [
+    "Cell membrane",
+    "Centrosome",
+    "Cytoplasm",
+    "Golgi body",
+    "Lysosome",
+    "Mitochondrion",
+    "Nuclear membrane",
+    "Nucleolus",
+    "Nucleus",
+    "Ribosome",
+    "Rough endoplasmic reticulum",
+    "Smooth endoplasmic reticulum",
+    "Vacuole"
 ];
 var rand = questions[Math.floor(Math.random() * questions.length)];
 currentQuestion = rand;
@@ -36,19 +52,19 @@ var drops = [
   "yes-drop-12"
 ];
 
-//Cell membrane 0
-//Centrosome 1
-//Cytoplasm 2
-//Golgi body 3
-//Lysosome 4
-//Mitochondrion 5
-//Nuclear membrane 6
-//Nucleolus 7
-//Nucleus 8
-//Ribosome 9
-//Rough endoplasmic reticulum 10
-//Smooth endoplasmic reticulum 11
-//Vacuole 12
+words[0] = drops[1];
+words[1] = drops[2];
+words[2] = drops[3];
+words[3] = drops[4];
+words[4] = drops[5];
+words[5] = drops[6];
+words[6] = drops[7];
+words[7] = drops[8];
+words[8] = drops[9];
+words[9] = drops[10];
+words[10] = drops[11];
+words[11] = drops[12];
+words[12] = drops[13];
 
 $(document).ready(function() { document.getElementById('dropzone-one').innerHTML += rand;});
 
@@ -96,7 +112,7 @@ interact('.draggable')
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
   }
-
+  
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
 /* The dragging code for '.draggable' from the demo above
@@ -104,7 +120,6 @@ interact('.draggable')
 // enable draggables to be dropped into this
 interact('.dropzone').dropzone({
   // only accept elements matching this CSS selector
-  //accept: '#yes-drop',
   // Require a 75% element overlap for a drop to be possible
   overlap: 0.75,
 
@@ -129,36 +144,7 @@ interact('.dropzone').dropzone({
     //event.relatedTarget.textContent = 'Dragged out';
   },
   ondrop: function (event) {
-    switch(currentQuestion) {
-      case "The thin layer of protein and fat that surrounds the cell. The cell membrane is semipermeable, allowing some substances to pass into the cell and blocking others.":
-        break;
-      case "A small body located near the nucleus - it has a dense center and radiating tubules. The centrosomes is where microtubules are made. During cell division (mitosis), the centrosome divides and the two parts move to opposite sides of the dividing cell. The centriole is the dense center of the centrosome.":
-        break;
-      case "The jellylike material outside the cell nucleus in which the organelles are located.":
-        break;
-      case "A flattened, layered, sac-like organelle that looks like a stack of pancakes and is located near the nucleus. It produces the membranes that surround the lysosomes. The Golgi body packages proteins and carbohydrates into membrane-bound vesicles for 'export' from the cell.":
-        break;
-      case "Round organelles surrounded by a membrane and containing digestive enzymes. This is where the digestion of cell nutrients takes place.":
-        break;
-      case "Spherical to rod-shaped organelles with a double membrane. The inner membrane is infolded many times, forming a series of projections (called cristae). The mitochondrion converts the energy stored in glucose into ATP (adenosine triphosphate) for the cell.":
-        break;
-      case "The membrane that surrounds the nucleus.":
-        break;
-      case "An organelle within the nucleus - it is where ribosomal RNA is produced. Some cells have more than one nucleolus.":
-        break;
-      case "Spherical body containing many organelles, including the nucleolus. The nucleus controls many of the functions of the cell (by controlling protein synthesis) and contains DNA (in chromosomes). The nucleus is surrounded by the nuclear membrane.":
-        break;
-      case "Small organelles composed of RNA-rich cytoplasmic granules that are sites of protein synthesis.":
-        break;
-      case "A vast system of interconnected, membranous, infolded and convoluted sacks that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). Rough ER is covered with ribosomes that give it a rough appearance. Rough ER transports materials through the cell and produces proteins in sacks called cisternae (which are sent to the Golgi body, or inserted into the cell membrane).":
-        break;
-      case "A vast system of interconnected, membranous, infolded and convoluted tubes that are located in the cell's cytoplasm (the ER is continuous with the outer nuclear membrane). The space within the ER is called the ER lumen. Smooth ER transports materials through the cell. It contains enzymes and produces and digests lipids (fats) and membrane proteins; smooth ER buds off from rough ER, moving the newly-made proteins and lipids to the Golgi body, lysosomes, and membranes.":
-        break;
-      case "Fluid-filled, membrane-surrounded cavities inside a cell. The vacuole fills with food being digested and waste material that is on its way out of the cell.":
-        break;
-      default:
-        document.write("Error!");
-    }
+
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
