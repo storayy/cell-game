@@ -1,3 +1,4 @@
+//storay
 //DECLARE VARIABLES
 var ans = new Array;
 var done = new Array;
